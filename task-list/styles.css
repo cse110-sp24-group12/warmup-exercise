@@ -1,3 +1,41 @@
 h1 {
-    color: red;
+    color: black;
+}
+
+* {
+    font-family:helvetica;
+}
+
+input:checked + label {
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.5);
+}
+
+input + label {
+    margin-right: 50px;
+}
+
+input:checked ~ h4 {
+    color: green;
+}
+
+input ~ h4 {
+    text-align: right;
+}
+
+.task-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    gap: 10px;
+    width: 100%;
+}
+
+.list-widget {
+    /*text-align:center;*/
+    display: flex;
+    flex-direction: column;
+    width: 500px;
 }
