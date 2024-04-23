@@ -63,7 +63,7 @@ class TaskListWidget extends HTMLElement {
         // Display due date
         const dueDateText = document.createElement('h4');
         const dueDate = new Date(task.due_date);
-        dueDateText.innerHTML = ' - Due: ' + dueDate.toLocaleString();
+        dueDateText.innerHTML = 'Due Date: ' + dueDate.toLocaleString();
 
         // Append checkbox, title, and due date to <li> element
         task_container.appendChild(checkbox);
