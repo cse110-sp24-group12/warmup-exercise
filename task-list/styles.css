@@ -1,14 +1,18 @@
+title {
+    text-decoration: underline;
+}
+
 h1 {
     color: black;
 }
 
 * {
-    font-family:helvetica;
+    font-family:arial;
 }
 
 input:checked + label {
     text-decoration: line-through;
-    color: rgba(128, 128, 128, 0.5);
+    color: green;
 }
 
 input + label {
@@ -19,10 +23,6 @@ input:checked ~ h4 {
     color: green;
 }
 
-input ~ h4 {
-    text-align: right;
-}
-
 .task-item {
     display: flex;
     flex-direction: row;
@@ -31,6 +31,16 @@ input ~ h4 {
     height: 40px;
     gap: 10px;
     width: 100%;
+    /*Added a border to the tasks*/
+    border: 2px solid black;
+    padding: 20px;
+    margin: 10px; 
+    border-radius: 100px;
+    overflow-wrap: break-word;
+}
+/*Added a hover effect to the task items*/
+.task-item:hover {
+    background-color: gray;
 }
 
 .list-widget {
