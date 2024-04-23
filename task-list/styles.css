@@ -39,3 +39,14 @@ input ~ h4 {
     flex-direction: column;
     width: 500px;
 }
+/* Global styles */
+
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.5);
+}
+
+.task-item span {
+    color: black;
+}
