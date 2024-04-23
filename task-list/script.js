@@ -14,9 +14,9 @@ class TaskListWidget extends HTMLElement {
                 <input type="time" id="timeInput">
                 <button id="addBtn">Add Task</button>
                 
-                <ul id="taskList">
+                <div class="list-widget" id="taskList">
                     <!-- Tasks will be added dynamically here -->
-                </ul>
+                </div>
             </div>`;
     }
 
@@ -43,35 +43,34 @@ class TaskListWidget extends HTMLElement {
         }
     }
 
-    addTask(task, ul) {
-        const li = document.createElement('li'); // Create <li> for each task
-        li.style.marginBottom = '10px'; // Add margin for spacing between tasks
+    addTask(task, container, id) {
+        const task_container = document.createElement('div'); // Create <li> for each task
+        task_container.classList.add("task-item");
+        task_container.style.marginBottom = '10px'; // Add margin for spacing between tasks
 
         // Create checkbox for task status
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = task.is_done || false; // Set checkbox state based on task completion status
-        checkbox.disabled = false; // Disable checkbox (optional)
+        checkbox.id = `task${id}`;
 
         // Display task title
-        const titleText = document.createElement('span');
-        titleText.textContent = task.title;
+        const titleText = document.createElement('label');
+        titleText.innerHTML = task.title;
+        titleText.setAttribute("for", `task${id}`)
         titleText.style.marginLeft = '10px'; // Add margin for spacing between checkbox and title
         
         // Display due date
-        const dueDateText = document.createElement('span');
+        const dueDateText = document.createElement('h4');
         const dueDate = new Date(task.due_date);
-        dueDateText.textContent = ' - Due: ' + dueDate.toLocaleString();
-        dueDateText.style.color = 'gray'; // Style due date text
+        dueDateText.innerHTML = ' - Due: ' + dueDate.toLocaleString();
 
         // Append checkbox, title, and due date to <li> element
-        li.appendChild(checkbox);
-        
-        li.appendChild(titleText);
-        
-        li.appendChild(dueDateText);
+        task_container.appendChild(checkbox);
+        task_container.appendChild(titleText);
+        task_container.appendChild(dueDateText);
 
-        ul.appendChild(li); // Append <li> to <ul>
+        container.appendChild(task_container); // Append <li> to <ul>
     }
 
     updateLocalStorage() {
@@ -98,8 +97,8 @@ class TaskListWidget extends HTMLElement {
         ul.id = "task_list_ul";
         ul.style.listStyleType = 'none'; // Remove default list-style (bullets)
 
-        this.tasks.forEach(task => {
-            this.addTask(task, ul);
+        this.tasks.forEach((task, idx) => {
+            this.addTask(task, ul, idx);
         });
 
         const addBtn = document.getElementById('addBtn');
