@@ -10,6 +10,43 @@ h1 {
     font-family:arial;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#taskInput {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#addBtn, .removeBtn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+}
+
+.taskItem {
+    margin-bottom: 5px;
+}
+
 input:checked + label {
     text-decoration: line-through;
     color: green;
