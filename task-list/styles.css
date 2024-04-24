@@ -121,3 +121,10 @@ footer {
     z-index: 1000;
     /* Ensure it appears above other content */
 }
+
+main {
+    margin-top: 200px;
+    /* Adjust margin top to accommodate header height */
+    padding-top: 20px;
+    /* Add padding to create space between header and todo list */
+}
