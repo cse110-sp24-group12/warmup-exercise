@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Task List Widget</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
-    </head>
-    <body>
-        <main>
-            <task-list-widget src="tasks.json"></task-list-widget>
-        </main>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Task List Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
+</head>
+
+<body>
+    <main>
+        <task-list-widget src="tasks.json"></task-list-widget>
+    </main>
+    <div id="google_translate_element"></div>
+    <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</body>
+
 </html>
