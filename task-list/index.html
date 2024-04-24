@@ -12,8 +12,8 @@
     <main>
         <task-list-widget src="tasks.json"></task-list-widget>
     </main>
+    <!-- Google Translate Widget Code -->
     <div id="google_translate_element"></div>
-    <script src="script.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -22,8 +22,8 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+    <!-- Ensure that the Google Translate script is loaded over HTTPS -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
