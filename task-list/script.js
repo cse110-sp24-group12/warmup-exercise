@@ -69,6 +69,10 @@ class TaskListWidget extends HTMLElement {
         checkbox.type = 'checkbox';
         checkbox.checked = task.is_done || false; // Set checkbox state based on task completion status
         checkbox.id = `task${id}`;
+        checkbox.addEventListener('change', () => {
+            this.tasks[id].is_done = checkbox.checked;
+            this.updateLocalStorage();
+        })
 
         // Display task title
         const titleText = document.createElement('label');
