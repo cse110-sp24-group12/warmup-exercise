@@ -9,9 +9,15 @@ class TaskListWidget extends HTMLElement {
             <div class="container">
                 <h2>Todo List</h2>
                 
-                <input type="text" id="taskInput" placeholder="Enter task...">
-                <input type="date" id="dateInput">
-                <input type="time" id="timeInput">
+                <div class="inputContainer">
+                    <div>
+                        <input type="text" id="taskInput" placeholder="Enter task...">
+                    </div>
+                    <div>
+                        <input type="date" id="dateInput">
+                        <input type="time" id="timeInput">
+                    </div>
+                </div>
                 <button id="addBtn">Add Task</button>
                 
                 <div class="list-widget" id="taskList">
