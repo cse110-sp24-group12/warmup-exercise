@@ -86,3 +86,11 @@ input:checked ~ h4 {
     flex-direction: column;
     width: 500px;
 }
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+}

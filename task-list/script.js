@@ -85,10 +85,21 @@ class TaskListWidget extends HTMLElement {
         const dueDate = new Date(task.due_date);
         dueDateText.innerHTML = 'Due Date: ' + dueDate.toLocaleString();
 
+        // Create delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = 'X';
+        deleteBtn.classList.add('delete-button');
+        deleteBtn.addEventListener('click', () => {
+            task_container.remove(); // Remove the task container from the DOM
+            this.tasks.splice(id, 1); // Remove task from array
+            this.updateLocalStorage(); // Update local storage
+        });
+
         // Append checkbox, title, and due date to <li> element
         task_container.appendChild(checkbox);
         task_container.appendChild(titleText);
         task_container.appendChild(dueDateText);
+        task_container.appendChild(deleteBtn);
 
         container.appendChild(task_container); // Append <li> to <ul>
     }
@@ -97,9 +108,7 @@ class TaskListWidget extends HTMLElement {
     Update the local storage with the new tasks array as needed (generally after adding or removing tasks)
     */
     updateLocalStorage() {
-        if (this.tasks.length > 0) {
-            localStorage.setItem("tasks", JSON.stringify(this.tasks)); // Store tasks in local storage
-        }
+        localStorage.setItem("tasks", JSON.stringify(this.tasks)); // Store tasks in local storage
     }
 
     /* 
