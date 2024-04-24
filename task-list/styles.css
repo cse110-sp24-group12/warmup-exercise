@@ -23,9 +23,22 @@ body {
     text-align: center;
 }
 
+.inputContainer{
+    width: 100%;
+}
+
 #taskInput {
-    width: 70%;
+    width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
+}
+
+#dateInput{
+    width: 15%;
+    margin-bottom: 10px;
+}
+#timeInput{
+    width: 15%;
     margin-bottom: 10px;
 }
 
@@ -40,9 +53,7 @@ body {
 #taskList {
     list-style-type: none;
     padding: 0;
-    text-align: left;
 }
-
 .taskItem {
     margin-bottom: 5px;
 }
@@ -59,7 +70,12 @@ input + label {
 input:checked ~ h4 {
     color: green;
 }
-
+.list-widget {
+    /* text-align:center; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 .task-item {
     display: flex;
     flex-direction: row;
@@ -70,7 +86,7 @@ input:checked ~ h4 {
     width: 100%;
     /*Added a border to the tasks*/
     border: 2px solid black;
-    padding: 20px;
+    padding: 7px;
     margin: 10px; 
     border-radius: 100px;
     overflow-wrap: break-word;
@@ -80,9 +96,7 @@ input:checked ~ h4 {
     background-color: gray;
 }
 
-.list-widget {
-    /*text-align:center;*/
-    display: flex;
-    flex-direction: column;
-    width: 500px;
+h4{
+    margin-left: auto;
+    margin-right: 10px;
 }
