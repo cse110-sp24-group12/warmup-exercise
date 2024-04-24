@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Task List Widget</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
-    </head>
-    <body>
-        <main>
-            <task-list-widget src="tasks.json"></task-list-widget>
-        </main>
-        <script src="script.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Task List Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
+    <style>
+        /* CSS to position the Google Translate button */
+        
+        #google_translate_element {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            /* Ensure it appears above other content */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Translate Widget Code -->
+    <div id="google_translate_element"></div>
+
+    <main>
+        <task-list-widget src="tasks.json"></task-list-widget>
+    </main>
+
+    <!-- Ensure that the Google Translate script is loaded over HTTPS -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en'
+            }, 'google_translate_element');
+        }
+    </script>
+</body>
+
 </html>
