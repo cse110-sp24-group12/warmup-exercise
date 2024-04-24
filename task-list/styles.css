@@ -3,23 +3,23 @@ h1 {
 }
 
 * {
-    font-family:helvetica;
+    font-family: helvetica;
 }
 
-input:checked + label {
+input:checked+label {
     text-decoration: line-through;
     color: rgba(128, 128, 128, 0.5);
 }
 
-input + label {
+input+label {
     margin-right: 50px;
 }
 
-input:checked ~ h4 {
+input:checked~h4 {
     color: green;
 }
 
-input ~ h4 {
+input~h4 {
     text-align: right;
 }
 
@@ -38,4 +38,9 @@ input ~ h4 {
     display: flex;
     flex-direction: column;
     width: 500px;
+}
+
+.task-item.completed {
+    text-decoration: line-through;
+    color: rgba(128, 128, 128, 0.5);
 }

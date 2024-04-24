@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Task List Widget</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
-    </head>
-    <body>
-        <main>
-             <!-- 1. hard coded html task list -->
-            <!-- 2. add some styles -->
-            <div class="list-widget" id="task-list-widget">
-                <h1>To-do</h1>
-                <div class="task-item">
-                    <input type="checkbox" id="task1"> 
-                    <label for="task1">This is my first task</label>
-                    <h4>2024-04-23T18:25:43.511</h4>
-                </div>
 
-                <br>
+<head>
+    <meta charset="utf-8">
+    <title>Task List Widget</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
+</head>
 
-                <div class="task-item">
-                    <input type="checkbox" id="task2"> 
-                    <label for="task2">This is my second task</label>
-                    <h4>2024-04-23T18:25:43.511</h4>
-                </div>
-
-                <br>
-
-                <div class="task-item">
-                    <input type="checkbox" id="task3"> 
-                    <label for="task3">This is my third task</label>
-                    <h4>2024-04-23T18:25:43.511</h4>
-                </div>
-
-                <br>
-
-                <div class="task-item">
-                    <input type="checkbox" id="task4"> 
-                    <label for="task4">This is my first task</label>
-                    <h4>2024-04-23T18:25:43.511</h4>
-                </div>
+<body>
+    <main>
+        <!-- 1. hard coded html task list -->
+        <!-- 2. add some styles -->
+        <div class="list-widget" id="task-list-widget">
+            <h1>To-do</h1>
+            <div class="task-item">
+                <input type="checkbox" id="task1">
+                <label for="task1">This is my first task</label>
+                <h4>2024-04-23T18:25:43.511</h4>
             </div>
-        </main>
-        <script src="script.js"></script>
-    </body>
+
+            <br>
+
+            <div class="task-item">
+                <input type="checkbox" id="task2">
+                <label for="task2">This is my second task</label>
+                <h4>2024-04-23T18:25:43.511</h4>
+            </div>
+
+            <br>
+
+            <div class="task-item">
+                <input type="checkbox" id="task3">
+                <label for="task3">This is my third task</label>
+                <h4>2024-04-23T18:25:43.511</h4>
+            </div>
+
+            <br>
+
+            <div class="task-item">
+                <input type="checkbox" id="task4">
+                <label for="task4">This is my first task</label>
+                <h4>2024-04-23T18:25:43.511</h4>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <task-list-widget src="tasks.json"></task-list-widget>
+</body>
+
 </html>
