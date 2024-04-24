@@ -126,12 +126,12 @@ class TaskListWidget extends HTMLElement {
             this.addTask(task, ul, idx);
         });
 
-        // Add event listener to each checkbox to toggle task completion status
         const addBtn = document.getElementById('addBtn');
         const taskInput = document.getElementById('taskInput');
         const dateInput = document.getElementById('dateInput');
         const timeInput = document.getElementById('timeInput');
 
+        // Get info about new task and add it to the list to be rendered
         addBtn.addEventListener('click', () => {
             const taskText = taskInput.value.trim();
             const taskDate = dateInput.value;
@@ -154,6 +154,9 @@ class TaskListWidget extends HTMLElement {
         this.appendChild(ul); // Append <ul> to the custom element
     }
 
+    /*
+    When a task is checked, update the task status in the local storage so it is not rendered improperly
+    */
     removeTaskFromLocalStorage(taskText, taskDate, taskTime) {
         // Find index of the task to remove
         const index = tasks.findIndex(task => task.text === taskText && task.date === taskDate && task.time === taskTime);
