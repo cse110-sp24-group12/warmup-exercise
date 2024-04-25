@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <title>Task List Widget</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
-</head>
-
-<body>
-    <main>
-        <!-- 1. hard coded html task list -->
-        <!-- 2. add some styles -->
-        <div class="list-widget" id="task-list-widget">
-            <h1>To-do</h1>
-            <div class="task-item">
-                <input type="checkbox" id="task1">
-                <label for="task1">This is my first task</label>
-                <h4>2024-04-23T18:25:43.511</h4>
-            </div>
-
-            <br>
-
-            <div class="task-item">
-                <input type="checkbox" id="task2">
-                <label for="task2">This is my second task</label>
-                <h4>2024-04-23T18:25:43.511</h4>
-            </div>
-
-            <br>
-
-            <div class="task-item">
-                <input type="checkbox" id="task3">
-                <label for="task3">This is my third task</label>
-                <h4>2024-04-23T18:25:43.511</h4>
-            </div>
-
-            <br>
-
-            <div class="task-item">
-                <input type="checkbox" id="task4">
-                <label for="task4">This is my first task</label>
-                <h4>2024-04-23T18:25:43.511</h4>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
-    <task-list-widget src="tasks.json"></task-list-widget>
-</body>
-
+    <head>
+        <meta charset="utf-8">
+        <title>Task List Widget</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="/images/favicon-16x16.png">
+        <style>
+            /* CSS to position the Google Translate button */
+            
+            #google_translate_element {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 1000;
+                width: 100px;
+                /* Ensure it appears above other content */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <!-- Team logo -->
+            <img src="./logo.jpeg" alt="Team Logo" width="150">
+            <!-- Team name -->
+            <h1>The Infinite Loops</h1>
+        </header>
+        <div id="google_translate_element"></div>
+        <main>
+            <task-list-widget src="tasks.json"></task-list-widget>
+        </main>
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 The Infinite Loops. All rights reserved.
+        </footer>
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <script src="script.js"></script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                }, 'google_translate_element');
+            }
+        </script>
+    </body>
 </html>
