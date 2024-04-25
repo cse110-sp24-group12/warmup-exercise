@@ -109,6 +109,13 @@ input:checked~h4 {
     width: 500px;
 }
 
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
 h4{
     margin-left: auto;
     margin-right: 10px;
