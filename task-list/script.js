@@ -145,12 +145,10 @@ class TaskListWidget extends HTMLElement {
     */
     renderTasks() {
         this.init();
-        const ul = document.createElement('ul'); // Create <ul> element
-        ul.id = "task_list_ul";
-        ul.style.listStyleType = 'none'; // Remove default list-style (bullets)
+        const tasklist_container = document.getElementById("taskList");
 
         this.tasks.forEach((task, idx) => {
-            this.addTask(task, ul, idx);
+            this.addTask(task, tasklist_container, idx);
         });
 
         const addBtn = document.getElementById('addBtn');
