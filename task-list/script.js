@@ -22,7 +22,7 @@ class TaskListWidget extends HTMLElement {
                     </div>
                     <div>
                         <input type="date" id="dateInput">
-                        <input type="time" id="timeInput">
+                        <input type="time" id="timeInput" step="60">
                     </div>
                 </div>
                 <button id="addBtn">Add Task</button>
@@ -31,6 +31,9 @@ class TaskListWidget extends HTMLElement {
                     <!-- Tasks will be added dynamically here -->
                 </div>
             </div>`;
+
+        document.getElementById("dateInput").valueAsDate = new Date();
+        document.getElementById("timeInput").valueAsDate = new Date();
     }
 
     /* 
@@ -142,12 +145,10 @@ class TaskListWidget extends HTMLElement {
     */
     renderTasks() {
         this.init();
-        const ul = document.createElement('ul'); // Create <ul> element
-        ul.id = "task_list_ul";
-        ul.style.listStyleType = 'none'; // Remove default list-style (bullets)
+        const tasklist_container = document.getElementById("taskList");
 
         this.tasks.forEach((task, idx) => {
-            this.addTask(task, ul, idx);
+            this.addTask(task, tasklist_container, idx);
         });
 
         const addBtn = document.getElementById('addBtn');

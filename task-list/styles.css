@@ -23,6 +23,9 @@ body {
 
 .container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .inputContainer{
@@ -53,10 +56,15 @@ body {
     cursor: pointer;
 }
 
+#task_list_ul {
+    padding: 0px;
+}
+
 #taskList {
     list-style-type: none;
     padding: 0;
 }
+
 .taskItem {
     margin-bottom: 5px;
 }
@@ -77,7 +85,13 @@ input:checked~h4 {
     /* text-align:center; */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
     width: 100%;
+
+    max-height: 400px;
+    min-width: 600px;
+    overflow-y: scroll;
 }
 .task-item {
     display: flex;
@@ -86,13 +100,15 @@ input:checked~h4 {
     justify-content: flex-start;
     height: 40px;
     gap: 10px;
-    width: 100%;
+    width: 90%;
     /*Added a border to the tasks*/
     border: 2px solid black;
-    padding: 7px;
-    margin: 10px; 
+    padding: 7px; 
     border-radius: 100px;
     overflow-wrap: break-word;
+    transition-duration: 150ms;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 
@@ -114,6 +130,14 @@ input:checked~h4 {
     color: white;
     border: none;
     padding: 5px;
+    border-radius: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition-duration: 150ms;
+
+    &:hover {
+        background-color: #8a1c0b;
+    }
 }
 
 h4{
