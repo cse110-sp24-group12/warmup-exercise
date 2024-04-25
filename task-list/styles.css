@@ -57,6 +57,7 @@ body {
     list-style-type: none;
     padding: 0;
 }
+
 .taskItem {
     margin-bottom: 5px;
 }
@@ -93,6 +94,8 @@ input:checked~h4 {
     margin: 10px; 
     border-radius: 100px;
     overflow-wrap: break-word;
+    transition-duration: 150ms;
+    cursor: pointer;
 }
 
 
@@ -114,6 +117,14 @@ input:checked~h4 {
     color: white;
     border: none;
     padding: 5px;
+    border-radius: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition-duration: 150ms;
+
+    &:hover {
+        background-color: #8a1c0b;
+    }
 }
 
 h4{
