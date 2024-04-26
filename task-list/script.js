@@ -122,6 +122,7 @@ class TaskListWidget extends HTMLElement {
     Update the local storage with the new tasks array as needed (generally after adding or removing tasks)
     */
     updateLocalStorage() {
+        console.log("Hello")
         localStorage.setItem("tasks", JSON.stringify(this.tasks)); // Store tasks in local storage
     }
 
@@ -176,7 +177,7 @@ class TaskListWidget extends HTMLElement {
             }
         });
 
-        this.appendChild(ul); // Append <ul> to the custom element
+        this.appendChild(tasklist_container); // Append <ul> to the custom element
     }
 
     /*
